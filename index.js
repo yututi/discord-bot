@@ -36,16 +36,6 @@ client.on('message', async msg => {
 });
 
 // alert at every noon.
-client.on('message', async msg => {
-  const {
-    content
-  } = msg
-  const cmdPrefix = '/setalert:'
-  if (!content.startsWith(cmdPrefix)) return
-
-
-});
-
 const job = schedule.scheduleJob(
   {hour: 21, minute: 20}, 
   async () => {
