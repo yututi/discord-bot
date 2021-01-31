@@ -1,3 +1,6 @@
 {
-  "TOKEN": "paste your token here."
+  "TOKEN": "paste your token here.",
+  "ALERT_TARGET_CHANNNEL_IDS": [
+    "paste voice channel id"
+  ]
 }

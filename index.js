@@ -6,11 +6,6 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.options.presence = {
-    activity: {
-      type: "PLAYING",
-    }
-  }
 });
 
 client.on('message', msg => {
@@ -39,17 +34,19 @@ client.on('message', async msg => {
 const job = schedule.scheduleJob(
   {hour: 21, minute: 20}, 
   async () => {
-    const channel = await client.channels.fetch("668397474179973145")
+    config.ALERT_TARGET_CHANNNEL_IDS.forEach(id => {
+      const channel = await client.channels.fetch(id)
 
-    channel.join().then(connection => {
-      const broadcast = client.voice.createBroadcast();
-      const disp = connection.play(broadcast)
-      const dispatcher = broadcast.play('./test.mp3');
-      dispatcher.on("finish", () => {
-        console.log("end")
-        broadcast.end()
-        connection.disconnect()
-        disp.destroy()
+      channel.join().then(connection => {
+        const broadcast = client.voice.createBroadcast();
+        const disp = connection.play(broadcast)
+        const dispatcher = broadcast.play('./test.mp3');
+        dispatcher.on("finish", () => {
+          console.log("end")
+          broadcast.end()
+          connection.disconnect()
+          disp.destroy()
+        })
       })
     })
   }
