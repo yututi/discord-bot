@@ -1,6 +1,6 @@
 const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1)
 
-module.exports = class PluginBase {
+export default class PluginBase {
   static get EVENTS () {
     return ['message', 'ready']
   }
