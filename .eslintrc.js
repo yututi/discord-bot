@@ -10,5 +10,8 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module'
+  },
+  rules: {
+    'no-new': 0
   }
 }

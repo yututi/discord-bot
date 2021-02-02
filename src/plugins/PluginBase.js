@@ -8,7 +8,7 @@ export default class PluginBase {
   /**
    *
    * @param {import("discord.js").Client} client
-   * @param {import("../../discord.sample.config.json")} config
+   * @param {import("../../discord.sample.config")} config
    */
   constructor (client, config) {
     this.client = client
@@ -18,8 +18,9 @@ export default class PluginBase {
     // FIXME: this参照漏洩
     PluginBase.EVENTS.forEach(eventName => {
       const listenerName = `on${capitalize(eventName)}`
-      const listener = this[listenerName]
+      let listener = this[listenerName]
       if (listener) {
+        listener = listener.bind(this)
         client.on(eventName, listener)
         this.effectiveListeners.push([eventName, listener])
       }

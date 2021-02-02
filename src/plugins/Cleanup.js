@@ -1,8 +1,8 @@
-import PluginBase from './PluginBase'
-import { isVoiceChannel, isDMChannel } from './utils'
+import PluginBase from './PluginBase.js'
+import { isVoiceChannel, isDMChannel } from './utils.js'
 
 export default class Alert extends PluginBase {
-  onMessage (msg) {
+  async onMessage (msg) {
     const {
       content,
       member,

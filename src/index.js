@@ -1,6 +1,6 @@
 import Discord from 'discord.js'
-import config from '../discord.config.json'
-import { registerPlugins } from './plugins'
+import { registerPlugins } from './plugins/index.js'
+import config from '../discord.config.js'
 
 const client = new Discord.Client()
 

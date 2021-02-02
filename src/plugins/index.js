@@ -1,11 +1,11 @@
-import Alert from './Alert'
-import Cleanup from './Cleanup'
+import Alert from './Alert.js'
+import Cleanup from './Cleanup.js'
 
 /**
  *
  * @param {import("discord.js").Client} client
  */
 export const registerPlugins = (client, config) => {
-  Alert(client)
-  Cleanup(client)
+  new Alert(client, config)
+  new Cleanup(client, config)
 }

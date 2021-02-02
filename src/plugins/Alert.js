@@ -1,6 +1,6 @@
-import PluginBase from './PluginBase'
+import PluginBase from './PluginBase.js'
 import schedule from 'node-schedule'
-import { isVoiceChannel } from './utils'
+import { isVoiceChannel } from './utils.js'
 
 export default class Alert extends PluginBase {
   onReady () {
