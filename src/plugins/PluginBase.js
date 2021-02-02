@@ -8,9 +8,11 @@ export default class PluginBase {
   /**
    *
    * @param {import("discord.js").Client} client
+   * @param {import("../../discord.sample.config.json")} config
    */
-  constructor (client) {
+  constructor (client, config) {
     this.client = client
+    this.config = config
     this.effectiveListeners = []
 
     // FIXME: this参照漏洩

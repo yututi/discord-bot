@@ -4,6 +4,6 @@ import { registerPlugins } from './plugins'
 
 const client = new Discord.Client()
 
-registerPlugins(client)
+registerPlugins(client, config)
 
 client.login(config.TOKEN)
