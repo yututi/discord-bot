@@ -12,6 +12,8 @@ export default class PluginBase {
   constructor (client) {
     this.client = client
     this.effectiveListeners = []
+
+    // FIXME: this参照漏洩
     PluginBase.EVENTS.forEach(eventName => {
       const listenerName = `on${capitalize(eventName)}`
       const listener = this[listenerName]

@@ -10,7 +10,7 @@ export default class Alert extends PluginBase {
     } = msg
     if (!member.hasPermission('MANAGE_CHANNELS')) return
     if (isVoiceChannel(channel)) return
-    if (isDMChannel(channel)) return // Dmchannel doesnt have bulkDelete function.
+    if (isDMChannel(channel)) return // Dmchannel doesn't have bulkDelete.
     if (content !== '/cleanup') return
     const messages = await channel.messages.fetch({ limit: 100 })
     channel.bulkDelete(messages).catch(e => {
