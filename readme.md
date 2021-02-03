@@ -20,3 +20,7 @@
 1. Clone this repo and run `npm i`
 1. Rename `discord.sample.config.json` to `discord.config.json` and replace values to your own.
 1. Run this bot `npm run start`
+
+## Credit
+
+[OtoLogic](https://otologic.jp)
