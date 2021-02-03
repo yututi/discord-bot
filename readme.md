@@ -8,6 +8,13 @@
 - Alert
   1. Scheduled alert based on `discord.config.json`. 
 
+## Required Permissions
+
+- MANAGE_MESSAGES
+- SPEAK
+
+*TODO:とりあえずこれで動いてるけど本当に必要か検証できてない*
+
 ## Hot to use
 
 1. Clone this repo and run `npm i`
