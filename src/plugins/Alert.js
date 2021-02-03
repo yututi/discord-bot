@@ -1,6 +1,8 @@
 import PluginBase from './PluginBase.js'
 import schedule from 'node-schedule'
 import { isVoiceChannel } from './utils.js'
+import path from 'path'
+const __dirname = process.cwd()
 
 export default class Alert extends PluginBase {
   onReady () {
@@ -14,7 +16,7 @@ export default class Alert extends PluginBase {
         const connection = await channel.join()
         const broadcast = this.client.voice.createBroadcast()
         const disp = connection.play(broadcast)
-        const dispatcher = broadcast.play('./alert.mp3')
+        const dispatcher = broadcast.play(path.resolve(__dirname, 'asset', 'alert.mp3'))
         dispatcher.on('finish', () => {
           broadcast.end()
           disp.destroy()

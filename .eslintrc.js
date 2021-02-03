@@ -4,10 +4,6 @@ module.exports = {
     node: true
   },
   extends: 'standard',
-  plugins: [
-    '@typescript-eslint'
-  ],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module'
   },
